@@ -1,0 +1,32 @@
+{
+  "name": "openmemory",
+  "version": "1.0.0",
+  "description": "7-layer cognitive memory architecture for AI agents. Sleep cycles, knowledge graphs, emotional context, identity persistence.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --outDir dist",
+    "start": "node dist/api/server.js",
+    "start:prod": "NODE_ENV=production node dist/api/server.js",
+    "dev": "tsx src/api/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@types/pg": "^8.18.0",
+    "dotenv": "^17.3.1",
+    "pg": "^8.20.0",
+    "uuid": "^13.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peter-j-thompson/openmemory.git"
+  },
+  "homepage": "https://github.com/peter-j-thompson/openmemory"
+}

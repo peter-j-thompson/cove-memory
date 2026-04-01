@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  open-memory-db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: open-memory-db:latest
+    container_name: open-memory-db
+    environment:
+      POSTGRES_DB: open_memory
+      POSTGRES_USER: open_memory
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-open_memory_dev}
+    ports:
+      - "5433:5432"  # Use 5433 to avoid conflicts
+    volumes:
+      - open_memory_data:/var/lib/postgresql
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U open_memory -d open_memory"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  open_memory_data:
