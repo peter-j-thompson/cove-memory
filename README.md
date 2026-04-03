@@ -16,6 +16,7 @@
 </p>
 
 📖 **[See the end-to-end demo →](docs/DEMO.md)** — watch what happens when memories go through a sleep cycle.
+OpenMemory is a **persistent AI memory** system for AI agents — a drop-in backend that replaces simple vector stores (Pinecone, Chroma, Weaviate) with a structured, Postgres-native cognitive memory architecture. Built for teams who need more than retrieval: agents that *remember*, *learn*, and *grow* across sessions.
 
 ---
 
@@ -233,6 +234,24 @@ curl http://localhost:3000/api/health
 | `/api/backfill` | POST | private | Bulk ingest |
 
 ---
+
+## Cognitive Memory Architecture
+
+OpenMemory implements a **cognitive memory architecture** — a structured approach to AI agent memory inspired by human neuroscience. Unlike flat vector databases that treat all memories as equal, OpenMemory models memory the way the brain does:
+
+| Layer | Type | Human Equivalent |
+|-------|------|-----------------|
+| Sensory Buffer | Live input pipeline | Working memory / attention |
+| Semantic Memory | Knowledge graph (AGE + pgvector) | Long-term factual knowledge |
+| Episodic Memory | Experiences with emotional arc | Autobiographical memory |
+| Identity | Values, beliefs, purpose | Self-concept |
+| Relational | Person models, trust vectors | Social memory |
+| Procedural | Learned workflows | Skill memory / muscle memory |
+| Meta-Memory | Consolidation + health | Sleep / memory consolidation |
+
+**Why this matters for AI agents**: a flat vector store gives you retrieval. A cognitive memory architecture gives you an agent that knows *who it is*, *who you are*, and *what it has learned* — without the semantic collapse that degrades retrieval at scale.
+
+> Search keywords: `agent memory postgresql`, `cognitive memory AI`, `persistent AI memory`, `vector store alternative`
 
 ## Comparison
 
